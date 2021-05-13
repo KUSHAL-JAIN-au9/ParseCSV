@@ -39,7 +39,7 @@ let csvStream = csv.parseFile(".\\csv\\5mSalesRecords.csv", { headers : true })
             let TotalProfit = record.TotalProfit
 
 
-            pool.query("INSERT INTO 5m Sales Records.csv(Region,Country,ItemType,SalesChannel,orderPriority,orderDate,orderID,ShipDate,UnitsSold,UnitCost,TotalRevenue,TotalCost,TotalProfit)\
+            pool.query("INSERT INTO SalesRecord(Region,Country,ItemType,SalesChannel,orderPriority,orderDate,orderID,ShipDate,UnitsSold,UnitCost,TotalRevenue,TotalCost,TotalProfit)\
             VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) ",[Region,Country,ItemType,SalesChannel,orderPriority,orderDate,orderID,ShipDate,UnitsSold,UnitPrice,UnitCost,TotalRevenue,TotalCost,TotalProfit],function(err){
 
                 if(err){
